@@ -1,9 +1,9 @@
 <?php
-// session_start();
-// $us = $_SESSION["usuario"];
-// if ($us == "") {
-//     header("Location: index.html");
-// }
+session_start();
+$us = $_SESSION["usuario"];
+if ($us == "") {
+    header("Location: index.html");
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($_POST as $name => $value) {

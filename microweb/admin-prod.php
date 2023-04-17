@@ -1,3 +1,10 @@
+    <?php
+    session_start();
+    $us = $_SESSION["usuario"];
+    if ($us == "") {
+        header("Location: admin-prod.php");
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +21,6 @@ ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="a
 </head>
 
 <body>
-    <?php
-    session_start();
-    $us = $_SESSION["usuario"];
-    if ($us == "") {
-        header("Location: admin-prod.php");
-    }
-    ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="admin.php">Almacen ABC</a>
