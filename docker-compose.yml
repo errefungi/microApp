@@ -6,14 +6,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: almacen2
     volumes:
-      - /var/lib/mysql:/var/lib/mysql
+      - ./db:/docker-entrypoint-initdb.d/:ro
     networks:
       - mynet
-
-    links:
-      - microordenes
-      - microusuarios
-      - microproductos
 
   microordenes:
     build: ./microOrdenes
@@ -21,10 +16,6 @@ services:
       - "3003:3003"
     networks:
       - mynet
-    links:
-      - almacen2
-      - microusuarios
-      - microproductos
 
   microproductos:
     ports:
@@ -32,10 +23,6 @@ services:
     build: ./microProductos
     networks:
       - mynet
-    links:
-      - almacen2
-      - microusuarios
-      - microordenes
 
   microusuarios:
     ports:
@@ -43,10 +30,6 @@ services:
     build: ./microUsuarios
     networks:
       - mynet
-    links:
-      - almacen2
-      - microordenes
-      - microproductos
 
   microweb:
     build: ./microweb
@@ -54,10 +37,6 @@ services:
       - "80:80"
     networks:
       - mynet
-
-volumes:
-  db_data:
-
 
 networks:
   mynet:
