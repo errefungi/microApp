@@ -4,7 +4,7 @@ $email = $_POST["email"];
 $usuario = $_POST["usuario"];
 $pass = $_POST["password"];
 // URL de la solicitud POST
-$url = 'http://192.168.100.3:3001/usuarios';
+$url = 'http://microusuarios:3001/usuarios';
 // Datos que se enviarán en la solicitud POST
 $data = array(
     'nombre' => $nombre,

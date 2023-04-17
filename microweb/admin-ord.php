@@ -57,7 +57,7 @@ ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="a
         </thead>
         <tbody>
             <?php
-            $servurl = "http://192.168.100.3:3003/ordenes";
+            $servurl = "http://microordenes.3:3003/ordenes";
             $curl = curl_init($servurl);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($curl);

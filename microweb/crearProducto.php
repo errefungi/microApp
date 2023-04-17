@@ -3,7 +3,7 @@ $nombre = $_POST["nombre"];
 $precio = $_POST["precio"];
 $inventario = $_POST["inventario"];
 // URL de la solicitud POST
-$url = 'http://192.168.100.3:3002/productos';
+$url = 'http://microproductos:3002/productos';
 // Datos que se enviarán en la solicitud POST
 $data = array(
     'nombre' => $nombre,
