@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 const connection = mysql.createPool({
-    port: 3307,
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    port: 3306,
+    host: 'almacen2',
+    user: 'miusuario',
+    password: 'mipassword',
     database: 'almacen2'
 });
 async function traerUsuarios() {

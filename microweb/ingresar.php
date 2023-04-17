@@ -1,7 +1,7 @@
 <?php
 $user = $_POST["usuario"];
 $pass = $_POST["password"];
-$servurl = "http://localhost:3001/usuarios/$user/$pass";
+$servurl = "http://192.168.100.3:3001/usuarios/$user/$pass";
 $curl = curl_init($servurl);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($curl);

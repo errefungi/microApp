@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  almacen2:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: '123'
+      MYSQL_DATABASE: almacen2
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mynet
+
+  microordenes:
+    build: ./microOrdenes
+    ports:
+      - "3003:3003"
+    networks:
+      - mynet
+
+  microproductos:
+    ports:
+      - "3002:3002"
+    build: ./microProductos
+    networks:
+      - mynet
+
+  microusuarios:
+    ports:
+      - "3001:3001"
+    build: ./microUsuarios
+    networks:
+      - mynet
+
+  microweb:
+    build: ./microweb
+    ports:
+      - "80:80"
+    networks:
+      - mynet
+
+volumes:
+  db_data:
+
+networks:
+  mynet:
