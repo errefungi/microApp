@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 const connection = mysql.createPool({
     port: 3306,
-    host: 'almacen2',
-    user: 'miusuario',
-    password: 'mipassword',
+    host: 'db',
+    user: 'root',
+    password: 'root',
     database: 'almacen2'
 });
 async function crearOrden(orden) {
