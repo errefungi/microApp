@@ -10,12 +10,21 @@ services:
     networks:
       - mynet
 
+    links:
+      - microordenes
+      - microusuarios
+      - microproductos
+
   microordenes:
     build: ./microOrdenes
     ports:
       - "3003:3003"
     networks:
       - mynet
+    links:
+      - almacen2
+      - microusuarios
+      - microproductos
 
   microproductos:
     ports:
@@ -23,6 +32,10 @@ services:
     build: ./microProductos
     networks:
       - mynet
+    links:
+      - almacen2
+      - microusuarios
+      - microordenes
 
   microusuarios:
     ports:
@@ -30,6 +43,10 @@ services:
     build: ./microUsuarios
     networks:
       - mynet
+    links:
+      - almacen2
+      - microordenes
+      - microproductos
 
   microweb:
     build: ./microweb
@@ -40,6 +57,7 @@ services:
 
 volumes:
   db_data:
+
 
 networks:
   mynet:
