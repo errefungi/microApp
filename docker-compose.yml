@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  almacen2:
+  db:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -16,21 +16,24 @@ services:
       - "3003:3003"
     networks:
       - mynet
-
+    depends_on:
+      - db
   microproductos:
     ports:
       - "3002:3002"
     build: ./microProductos
     networks:
       - mynet
-
+    depends_on:
+      - db
   microusuarios:
     ports:
       - "3001:3001"
     build: ./microUsuarios
     networks:
       - mynet
-
+    depends_on:
+      - db
   microweb:
     build: ./microweb
     ports:
