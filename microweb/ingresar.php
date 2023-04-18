@@ -1,12 +1,10 @@
 <?php
 session_start();
-$_SESSION["usuario"] = $user;
 $user = $_POST["usuario"];
 if ($user == "admin") {
-    echo "admin";
     header("Location:admin.php");
 } else {
-    echo "usuario";
+//    echo "usuario";
     header("Location:usuario.php");
 }
 $pass = $_POST["password"];
