@@ -1,7 +1,15 @@
 <?php
+header("Location:ingresar.php");
 session_start();
 $_SESSION["usuario"] = $user;
 $user = $_POST["usuario"];
+if ($user == "admin") {
+    echo "admin";
+    header("Location:admin.php");
+} else {
+    echo "usuario";
+    header("Location:usuario.php");
+}
 $pass = $_POST["password"];
 $servurl = "http://microusuarios:3001/usuarios/$user/$pass";
 $curl = curl_init($servurl);
@@ -12,13 +20,3 @@ if ($response === false) {
     header("Location:index.html");
 }
 
-    if ($user == "admin") {
-        echo "admin";
-        header("Location:admin.php");
-    } else {
-        echo "usuario";
-        header("Location:usuario.php");
-    }
-if ($user === false) {
-    header("Location:index.html");
-}
