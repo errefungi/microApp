@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["usuario"] = $user;
 $user = $_POST["usuario"];
 $pass = $_POST["password"];
 $servurl = "http://microusuarios:3001/usuarios/$user/$pass";
@@ -11,8 +13,6 @@ if ($response === false) {
 }
 $resp = json_decode($response);
 if (count($resp) != 0) {
-    session_start();
-    $_SESSION["usuario"] = $user;
     if ($user == "admin") {
         echo "admin";
         header("Location:admin.php");

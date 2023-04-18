@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION["usuario"] = $user;
 $nombre = $_POST["nombre"];
 $precio = $_POST["precio"];
 $inventario = $_POST["inventario"];
