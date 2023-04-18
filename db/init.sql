@@ -24,3 +24,9 @@ CREATE TABLE ordenes (
   fecha DATETIME DEFAULT(now()),
   primary key (id)
 );
+
+INSERT INTO usuarios (nombre, email, usuario, password)
+VALUES ('Admin', 'admin@example.com', 'admin', 'admin123');
+
+INSERT INTO usuarios (nombre, email, usuario, password)
+VALUES ('Usuario Aleatorio', 'usuario@example.com', 'usuarioaleatorio', 'usuario123');
