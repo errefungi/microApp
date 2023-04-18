@@ -11,8 +11,7 @@ curl_close($curl);
 if ($response === false) {
     header("Location:index.html");
 }
-$resp = json_decode($response);
-if (count($resp) != 0) {
+
     if ($user == "admin") {
         echo "admin";
         header("Location:admin.php");
@@ -20,6 +19,6 @@ if (count($resp) != 0) {
         echo "usuario";
         header("Location:usuario.php");
     }
-} else {
+if ($user === false) {
     header("Location:index.html");
 }
