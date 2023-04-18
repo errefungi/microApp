@@ -1,10 +1,3 @@
-    <?php
-    session_start();
-    $us = $_SESSION["usuario"];
-    if ($us == "") {
-        header("Location: index.html");
-    }
-    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,9 +32,6 @@ ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="a
                         <a class="nav-link" href="admin-ord.php">Ordenes</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    <?php echo $us; ?>
-                </span>
             </div>
         </div>
     </nav>
