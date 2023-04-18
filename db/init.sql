@@ -1,4 +1,3 @@
-CREATE DATABASE almacen2;
 USE almacen2;
 
 CREATE TABLE usuarios (
