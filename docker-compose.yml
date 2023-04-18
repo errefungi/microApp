@@ -18,7 +18,7 @@ services:
         condition: on-failure
 
   microordenes:
-    image: your_dockerhub_username/microordenes:latest
+    image: errefungi/microordenes:latest
     ports:
       - "3003:3003"
     networks:
@@ -34,7 +34,7 @@ services:
         condition: on-failure
 
   microproductos:
-    image: your_dockerhub_username/microproductos:latest
+    image: errefungi/microproductos:latest
     ports:
       - "3002:3002"
     networks:
@@ -50,7 +50,7 @@ services:
         condition: on-failure
 
   microusuarios:
-    image: your_dockerhub_username/microusuarios:latest
+    image: errefungi/microusuarios:latest
     ports:
       - "3001:3001"
     networks:
@@ -66,7 +66,7 @@ services:
         condition: on-failure
 
   microweb:
-    image: your_dockerhub_username/microweb:latest
+    image: errefungi/microweb:latest
     ports:
       - "80:80"
     networks:
