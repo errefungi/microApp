@@ -1,5 +1,4 @@
 <?php
-header("Location:ingresar.php");
 session_start();
 $_SESSION["usuario"] = $user;
 $user = $_POST["usuario"];
