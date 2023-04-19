@@ -1,8 +1,6 @@
 <?php
-    session_start();
-    $us = $_SESSION["usuario"];
-    if ($us == "") {
-        header("Location: admin-prod.php");
+session_start();
+header("Location: admin-prod.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +79,7 @@ ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="a
                         <td><?php echo $precio; ?></td>
                         <td><?php echo $inventario; ?></td>
                         <td>
-                            <input type="range" min="0" max="<?php echo $inventario ?>" step="1" value="0" id="range<?php echo $i ?>" name="range<?php echo $id?>"></input>
+                            <input type="range" min="0" max="<?php echo $inventario ?>" step="1" value="0" id="range<?php echo $i ?>" name="range<?php echo $id ?>"></input>
                             <p id="rangeValue<?php echo $i ?>"></p>
                             <script>
                                 var slider = document.getElementById("range<?php echo $i ?>");

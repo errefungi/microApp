@@ -1,10 +1,5 @@
 <?php
 session_start();
-$us = $_SESSION["usuario"];
-if ($us == "") {
-    header("Location: index.html");
-}
-
 $items = array(); //Creamos el objecto que contendra los items para el request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($_POST as $name => $value) {
