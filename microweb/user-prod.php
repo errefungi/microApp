@@ -1,10 +1,9 @@
-    <?php
+<?php
     session_start();
     $us = $_SESSION["usuario"];
     if ($us == "") {
         header("Location: admin-prod.php");
-    }
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
